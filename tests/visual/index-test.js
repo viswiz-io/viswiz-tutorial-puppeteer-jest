@@ -17,6 +17,11 @@ describe('index page', () => {
 		async () => {
 			const text = await page.evaluate(() => document.body.textContent);
 			expect(text).toContain('ACME Banana');
+
+			await page.screenshot({
+				fullPage: true,
+				path: `${path.resolve(__dirname, '..', '..', 'results')}/index.png`,
+			});
 		},
 		5000,
 	);
