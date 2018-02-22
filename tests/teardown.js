@@ -1,3 +1,3 @@
 module.exports = async function() {
-	console.log('Jest Global Teardown');
+	global.__SERVER__.close();
 };

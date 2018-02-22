@@ -1,3 +1,7 @@
+const express = require('express');
+
 module.exports = async function() {
-	console.log('Jest Global Setup');
+	const app = express();
+	app.use(express.static('public/'));
+	global.__SERVER__ = app.listen(8080);
 };
