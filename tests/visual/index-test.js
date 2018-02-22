@@ -1,14 +1,23 @@
-const http = require('http');
+const path = require('path');
 
 describe('index page', () => {
-  it('can load the index page', (done) => {
-    http.request({
-      hostname: 'localhost',
-      port: 8080,
-      path: '/'
-    }, (response) => {
-      expect(response.statusCode).toBe(200);
-      done();
-    }).end();
-  });
+	let page;
+
+	beforeAll(async () => {
+		page = await __BROWSER__.newPage();
+		await page.goto('http://localhost:8080/');
+	}, 5000);
+
+	afterAll(async () => {
+		await page.close();
+	});
+
+	it(
+		'should load the index page',
+		async () => {
+			const text = await page.evaluate(() => document.body.textContent);
+			expect(text).toContain('ACME Banana');
+		},
+		5000,
+	);
 });
