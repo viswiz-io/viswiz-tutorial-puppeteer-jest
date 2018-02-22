@@ -5,6 +5,9 @@
   "author": "VisWiz.io <https://www.viswiz.io>",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
   "devDependencies": {
     "express": "4.16.2",
     "jest": "22.4.0",
