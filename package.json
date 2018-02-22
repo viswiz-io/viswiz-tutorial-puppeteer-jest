@@ -1,0 +1,14 @@
+{
+  "name": "viswiz-tutorial-puppeteer-jest",
+  "version": "1.0.0",
+  "description": "VisWiz.io Tutorial: Puppeteer and Jest",
+  "author": "VisWiz.io <https://www.viswiz.io>",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "4.16.2",
+    "jest": "22.4.0",
+    "puppeteer": "1.1.0",
+    "viswiz-sdk": "1.2.0"
+  }
+}
